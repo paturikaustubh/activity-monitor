@@ -26,6 +26,19 @@
   .card {
     border-radius: var(--border-radius);
 
+    &[data-shift="in"] {
+      border-right: 2px solid rgba(var(--primary-color) / 0.1);
+      border-right-style: dashed;
+    }
+    &[data-shift="out"] {
+      border-left: 2px solid rgba(var(--primary-color) / 0.1);
+      border-left-style: dashed;
+    }
+    &[data-shift="in-out"] {
+      border-inline: 2px solid rgba(var(--primary-color) / 0.1);
+      border-inline-style: dashed;
+    }
+
     .card-title {
       display: flex;
       justify-content: space-between;
@@ -33,6 +46,29 @@
 
       span.day {
         font-weight: normal;
+      }
+    }
+  }
+
+  button.load-more-days-button {
+    all: unset;
+    cursor: pointer;
+
+    .card.day-card {
+      height: 100%;
+      .card-body {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .content {
+          display: flex;
+          gap: 0.2em;
+          align-items: center;
+          scale: 1.5;
+        }
       }
     }
   }
